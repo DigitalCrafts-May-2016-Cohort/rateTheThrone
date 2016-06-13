@@ -1,0 +1,284 @@
+{
+  "gas_station": [
+    {
+      "name": "BP",
+      "place_id": "ChIJDccjCpID9YgRysN1smJiJ2Y",
+      "address": "245 Memorial Dr SE, Atlanta, GA 30312, United States",
+      "public": true,
+      "review": [
+        {
+        "author": "Joe",
+        "email": "bigjoe@hotmail.com",
+        "rating": 2,
+        "comment": "This bathroom is pretty horrific."
+        }
+      ]
+    },
+    {
+      "name": "Texaco",
+      "place_id": "ChIJJ2DrSJID9YgRiCCyjTJlRtk",
+      "address": "364 Hill St SE, Atlanta, GA 30316, United States",
+      "public": true,
+      "review": [
+        {
+          "author": "Steve",
+          "email": "stevec@gmail.com",
+          "rating": 2,
+          "comment": "Scary."
+        }
+      ]
+    },
+    {
+      "name": "Exxon",
+      "place_id": "ChIJt0tE0PQD9YgRkKZe8JDWARE",
+      "address": "400 Edgewood Ave SE, Atlanta, GA 30312, United States",
+      "public": true,
+      "review": [
+        {
+          "author": "Matt",
+          "email": "mattyice@yahoo.com",
+          "rating": 3,
+          "comment": "Not too bad."
+        }
+      ]
+    },
+    {
+      "name": "Texaco",
+      "place_id": "ChIJpXay6fMD9YgRKqpohRK5U9Q",
+      "address": "111 Boulevard NE, Atlanta, GA 30312, United States",
+      "public": true,
+      "review": [
+        {
+          "author": "Christy",
+          "email": "cjones22@hotmail.com",
+          "rating": 2,
+          "comment": "Avoid at all costs."
+        }
+      ]
+    },
+    {
+      "name": "Shell Food Mart",
+      "place_id": "ChIJC7fwxYkD9YgRa_5LjXXp8fk",
+      "address": "160 John Wesley Dobbs Ave NE, Atlanta, GA 30303, United States",
+      "public": true,
+      "review": [
+        {
+          "author": "Carolyn",
+          "email": "carolgettinmoney@gmail.com",
+          "rating": 3,
+          "comment": "Not too bad really."
+        }
+      ]
+    },
+    {
+      "name": "Exxon",
+      "place_id": "ChIJvaUNz20D9YgRXo1wa25zmxU",
+      "address": "634 Whitehall St SW, Atlanta, GA 30310, United States",
+      "public": true,
+      "review": [
+        {
+          "author": "DeeAnn",
+          "email": "deeannk@gmail.com",
+          "rating": 2,
+          "comment": "Hold it if you can."
+        }
+      ]
+    },
+    {
+      "name": "Exxon",
+      "place_id": "ChIJg4HbooME9YgRKRxiw6H_cKg",
+      "address": "479 Joseph E. Boone Blvd NW, Atlanta, GA 30314, United States",
+      "public": true,
+      "review": [
+        {
+          "author": "Tim",
+          "email": "timtim@gmail.com",
+          "rating": 3,
+          "comment": "Ehhhh"
+        }
+      ]
+    },
+    {
+      "name": "BP",
+      "place_id": "ChIJSUV4gZ8D9YgRoG6Et_oyqHY",
+      "address": "180 Ralph David Abernathy Blvd SW, Atlanta, GA 30312, United States",
+      "public": true,
+      "review": [
+        {
+          "author": "Cody",
+          "email": "codyb@gmail.com",
+          "rating": 2,
+          "comment": "Only if it's an absolute emergency."
+        }
+      ]
+    },
+    {
+      "name": "Texaco",
+      "place_id": "ChIJa3ShJnAD9YgR3SNDwdlJzb0",
+      "address": "294 Northside Dr SW, Atlanta, GA 30313, United States",
+      "public": true,
+      "review": [
+        {
+          "author": "Toby",
+          "email": "tobyhoooooo@aol.com",
+          "rating": 3,
+          "comment": "Looks like they clean it every so often. Not too bad."
+        }
+      ]
+    },
+    {
+      "name": "Chevron",
+      "place_id": "ChIJFZjYRO4D9YgRuQAEVw9--FA",
+      "address": "371 Boulevard SE, Atlanta, GA 30312, United States",
+      "public": true,
+      "review": [
+        {
+          "author": "Regan",
+          "email": "reganomics@gmail.com",
+          "rating": 1,
+          "comment": "Sooooooo bad."
+        }
+      ]
+    },
+    {
+      "name": "Chevron",
+      "place_id": "ChIJ_euZb4UE9YgRMSsKI3jP-vU",
+      "address": "548 Northside Dr NW, Atlanta, GA 30318, United States",
+      "public": true,
+      "review": [
+        {
+          "author": "Mitch",
+          "email": "moneymitch@charter.net",
+          "rating": 2,
+          "comment": "Only if there isn't another option."
+        }
+      ]
+    },
+    {
+      "name": "BP",
+      "place_id": "ChIJPV7v3e4D9YgRokdBcJUzpr0",
+      "address": "448 Boulevard SE, Atlanta, GA 30312, United States",
+      "public": true,
+      "review": [
+        {
+          "author": "Kyle",
+          "email": "pileofkyle@gmail.com",
+          "rating": 4,
+          "comment": "Wasn't too bad. Would visit again."
+        }
+      ]
+    },
+    {
+      "name": "Chevron",
+      "place_id": "ChIJzTobnm0D9YgRsSzlGlX_VRc",
+      "address": "556 Northside Dr SW, Atlanta, GA 30310, United States",
+      "public": true,
+      "review": [
+        {
+          "author": "Allen",
+          "email": "allent@hotmail.com",
+          "rating": 1,
+          "comment": "Run away. Run away very quickly."
+        }
+      ]
+    },
+    {
+      "name": "Exxon",
+      "place_id": "ChIJv7Jwz0ED9YgRlkB7K5QuWsI",
+      "address": "507 Joseph E Lowery Blvd SW, Atlanta, GA 30310, United States",
+      "public": true,
+      "review": [
+        {
+          "author": "Shanda",
+          "email": "shandapanda@gmail.com",
+          "rating": 3,
+          "comment": "Average. Maybe."
+        }
+      ]
+    },
+    {
+      "name": "BP",
+      "place_id": "ChIJu9WlaAwE9YgRqjc1HRtbXlQ",
+      "address": "356 Boulevard NE, Atlanta, GA 30312, United States",
+      "public": true,
+      "review": [
+        {
+          "author": "Sandhya",
+          "email": "sandhyaram@gmail.com",
+          "rating": 3,
+          "comment": "It's a bathroom."
+        }
+      ]
+    },
+    {
+      "name": "Texaco",
+      "place_id": "ChIJzY_L5RME9YgRAlONoVpdg9U",
+      "address": "689 Boulevard NE, Atlanta, GA 30308, United States",
+      "public": true,
+      "review": [
+        {
+          "author": "Dave",
+          "email": "misbedavein@hotmail.com",
+          "rating": 3,
+          "comment": "An average throne."
+        }
+      ]
+    },
+    {
+      "name": "Exxon",
+      "place_id": "ChIJaXgBp6kD9YgR2FO1bqXIu5g",
+      "address": "180 University Ave SW, Atlanta, GA 30315, United States",
+      "public": true,
+      "review": [
+        {
+          "author": "Jake",
+          "email": "jakethesnake@geocities.net",
+          "rating": 2,
+          "comment": "Pretty gross."
+        }
+      ]
+    },
+    {
+      "name": "Shell",
+      "place_id": "ChIJke832pcE9YgRMEIzhfdMw8s",
+      "address": "902 Donald Lee Hollowell Pkwy NW, Atlanta, GA 30318, United States",
+      "public": true,
+      "review": [
+        {
+          "author": "Max",
+          "email": "maximummax@angelfire.com",
+          "rating": 4,
+          "comment": "Not much worse than my bathroom at home."
+        }
+      ]
+    },
+    {
+      "name": "Shell Food Mart",
+      "place_id": "ChIJWzlwiFkB9YgRn13OXEfNVvY",
+      "address": "356 Moreland Ave SE, Atlanta, GA 30316, United States",
+      "public": true,
+      "review": [
+        {
+          "author": "Rob",
+          "email": "robyoublind@livejournal.com",
+          "rating": 3,
+          "comment": "Meh. It's ok."
+        }
+      ]
+    },
+    {
+      "name": "Chevron",
+      "place_id": "ChIJqcdtjF0E9YgRSPjTBiiiBzI",
+      "address": "970 Spring St NW, Atlanta, GA 30309, United States",
+      "public": true,
+      "review": [
+        {
+          "author": "Joe",
+          "email": "kcandjoejoe@gmail.com",
+          "rating": 2,
+          "comment": "It's bad."
+        }
+      ]
+    }
+  ]
+}
