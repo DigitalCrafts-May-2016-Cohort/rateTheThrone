@@ -49,7 +49,7 @@ function createMarker(place) {
           var windowContent =
           '<div class="content"><p>' + place.name + '<br>' +
           place.formatted_address + '<br>throne rating: ' + 'rating' +
-          '<br><a href="#">rate this throne</a></p></div>';
+          '<br><a href="#">rate this throne</a></p>' + '<p class="rating"><span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span></p>'+ '</div>';
 
           infowindow.setContent(windowContent);
           infowindow.open(map, this);
