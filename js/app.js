@@ -14,16 +14,22 @@ function initMap() {
      };
      map = new google.maps.Map(element, mapOptions);
 
-     var request = {
-          location: atlanta,
-          radius: 500,
-          query: "gas_station"
-     };
+     // var request = {
+     //      location: atlanta,
+     //      radius: 500,
+     //      query: "gas_station"
+     // };
 
      infowindow = new google.maps.InfoWindow();
 
      var service = new google.maps.places.PlacesService(map);
-     service.textSearch(request, callback);
+     // service.textSearch(request, callback);
+     service.nearbySearch({
+       location: atlanta,
+       radius: 850,
+       types: ['bar', 'store', 'restaurant']
+     }, callback);
+
 
 }
 
