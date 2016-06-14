@@ -1,4 +1,5 @@
-{
+[
+  {
   "gas_station": [
     {
       "name": "BP",
@@ -281,4 +282,280 @@
       ]
     }
   ]
+},
+
+{
+  "store": [
+    {
+      "name": "Kids Foot Locker",
+      "place_id": "ChIJgW9mqIYD9YgRUlVugfRy4GU",
+      "address": "50 Lower Alabama Street Ste 66, Atlanta",
+      "public": false,
+      "review": []
+    },
+    {
+      "name": "Walter's Clothing",
+      "place_id": "ChIJf-tOd4YD9YgR5FANklFstpM",
+      "address": "66 Decatur Street Southeast, Atlanta",
+      "public": false,
+      "review": []
+    },
+    {
+      "name": "CVS Pharmacy",
+      "place_id": "ChIJ4XmNW4ED9YgRLvgSvBXtPq8",
+      "address": "12-j Broad Street Southwest, Atlanta",
+      "public": true,
+      "review": [
+        {
+          "author": "Theo",
+          "email": "theodorebroosevelt@gmail.com",
+          "rating": 4,
+          "comment": "Solid bathroom. Clean."
+        }
+      ]
+    },
+    {
+      "name": "Miller's Rexall Drug",
+      "place_id": "ChIJobOJzoMD9YgRhI8D3g3ob5E",
+      "address": "87 Broad Street Southwest, Atlanta",
+      "public": false,
+      "review": []
+    },
+    {
+      "name": "Starbucks",
+      "place_id": "ChIJa4GvC4cD9YgRjyCt2GWRyU8",
+      "address": "100 Peachtree Street Northeast, Atlanta",
+      "public": true,
+      "review": [
+        {
+          "author": "Kelly",
+          "email": "kellythebasic@gmail.com",
+          "rating": 4,
+          "comment": "Totally great bathroom."
+        }
+      ]
+    },
+    {
+      "name": "Alien Touch Tattoo Inc",
+      "place_id": "ChIJ9Qmd74MD9YgRmTc5yBEVEDg",
+      "address": "80 Peachtree Street Southwest, Atlanta",
+      "public": false,
+      "review": [
+        {
+          "author": "Wade",
+          "email": "wadeinthewater@gmail.com",
+          "rating": 1,
+          "comment": "Jerks wouldn't let me use the bathroom."
+        }
+      ]
+    },
+    {
+      "name": "Payless ShoeSource",
+      "place_id": "ChIJIQExVoED9YgRGNnuQlA5XVs",
+      "address": "55 Peachtree Street Southwest, Atlanta",
+      "public": true,
+      "review": [
+        {
+          "author": "David",
+          "email": "davideoproducer@gmail.com",
+          "rating": 4,
+          "comment": "Got stuck shopping with the wife here and really had to go. Clean and comfy throne with greeeeaaat toilet paper."
+        }
+      ]
+    },
+    {
+      "name": "Supreme",
+      "place_id": "ChIJPV4Z5YMD9YgR1y7sZol2y4s",
+      "address": "76 Peachtree Street Southwest, Atlanta",
+      "public": true,
+      "review": [
+        {
+          "author": "Zach",
+          "email": "hypebeastzach@gmail.com",
+          "rating": 5,
+          "comment": "Clean bathroom. I was worried about getting the Yeezy's dirty, but they still clean tho."
+        }
+      ]
+    },
+    {
+      "name": "Beechwood Tile",
+      "place_id": "ChIJyWXXi4QD9YgRstu3jcMYcgA",
+      "address": "Atlanta",
+      "public": false,
+      "review": [
+        {
+          "author": "Mike",
+          "email": "mikelovestile@gmail.com",
+          "rating": 1,
+          "comment": "Asked to use their restroom after buying $1k worth of tile, but they said no. I will never go back."
+        }
+      ]
+    }
+  ]
+},
+
+{
+  "restaurant": [
+    {
+      "name": "Dua Vietnamese Noodle Soup",
+      "place_id": "ChIJg2UQ4YYD9YgR-wqnki-W2ds",
+      "address": "53 Broad Street Northwest, Atlanta",
+      "public": true,
+      "review": [
+        {
+          "author": "Jake",
+          "email": "jakethesnake@geocities.net",
+          "rating": 4,
+          "comment": "Pretty great throne. Respect."
+        }
+      ]
+    },
+    {
+      "name": "Waffle House",
+      "place_id": "ChIJzUPpYo8D9YgR0i5LEz1wm2k",
+      "address": "100 Piedmont Avenue Southeast, Atlanta",
+      "public": true,
+      "review": [
+        {
+          "author": "Matt",
+          "email": "matthewwissler@braves.com",
+          "rating": 3,
+          "comment": "Typical waho bathroom. Nothing special."
+        }
+      ]
+    },
+    {
+      "name": "Reuben's Deli",
+      "place_id": "ChIJm0eS4IYD9YgRVv1fiJjwURo",
+      "address": "57 Broad Street Northwest, Atlanta",
+      "public": true,
+      "review": [
+        {
+          "author": "Jimmy",
+          "email": "slimjimmy@yahoo.com",
+          "rating": 4,
+          "comment": "Decent bathroom."
+        }
+      ]
+    },
+    {
+      "name": "Chutney's",
+      "place_id": "ChIJC_4jp4MD9YgRgotVqDF7xkU",
+      "address": "142 Mitchell Street Southwest, Atlanta",
+      "public": true,
+      "review": [
+        {
+          "author": "Richard",
+          "email": "prettyricky@comcast.net",
+          "rating": 3,
+          "comment": "It's aight."
+        }
+      ]
+    },
+    {
+      "name": "Anatolia Cafe and Hookah Lounge",
+      "place_id": "ChIJnyuq_IYD9YgRWipcravXCis",
+      "address": "Peachtree Street Northeast, Atlanta",
+      "public": true,
+      "review": [
+        {
+          "author": "Mary",
+          "email": "scarymary@gmail.com",
+          "rating": 4,
+          "comment": "Not too bad."
+        }
+      ]
+    },
+    {
+      "name": "Subway",
+      "place_id": "ChIJHRAJnYQD9YgR_VanfjMXQU8",
+      "address": "221 Central Avenue, Atlanta",
+      "public": true,
+      "review": [
+        {
+          "author": "Blake",
+          "email": "blakelovessteak@gmail.com",
+          "rating": 2,
+          "comment": "Pretty bad. Stall wouldn't close."
+        }
+      ]
+    },
+    {
+      "name": "Subway",
+      "place_id": "ChIJZTVqFYQD9YgRMd0qiFSjaqs",
+      "address": "50 Lower Alabama Street #162, Atlanta",
+      "public": true,
+      "review": [
+        {
+          "author": "Liz",
+          "email": "lizzy@yahoo.com",
+          "rating": 3,
+          "comment": "Floors were really wet, but throne was solid."
+        }
+      ]
+    },
+    {
+      "name": "Ali Baba Mediterranean",
+      "place_id": "ChIJAWPk4YYD9YgRQQC6kJiVEyY",
+      "address": "60 Broad Street Northwest, Atlanta",
+      "public": true,
+      "review": [
+        {
+          "author": "Sophocles",
+          "email": "sophosantigone@gmail.com",
+          "rating": 4,
+          "comment": "πολύ καλό μπάνιο"
+        }
+      ]
+    },
+    {
+      "name": "Waffle House",
+      "place_id": "ChIJf2hAAIQD9YgRLh_y-pYjFdI",
+      "address": "96 Lower Alabama Street, Atlanta",
+      "public": true,
+      "review": [
+        {
+          "author": "Dante",
+          "email": "theofficialdante@danteofficial.com",
+          "rating": 3,
+          "comment": "I'd use it again."
+        }
+      ]
+    },
+    {
+      "name": "Subway",
+      "place_id": "ChIJ75c7-4MD9YgR9jXy5KjBJAU",
+      "address": "68 Broad Street Northwest, Atlanta",
+      "public": true,
+      "review": [
+        {
+          "author": "Arya",
+          "email": "aryastark@gmail.com",
+          "rating": 3,
+          "comment": "Not as clean as thrones in Westeros, but way cleaner than Winterfell"
+        }
+      ]
+    }
+  ]
+},
+
+{
+  "bar": [
+    {
+      "name": "Kenny's Alley",
+      "place_id": "ChIJZTVqFYQD9YgRYBRKmHGjjH0",
+      "address": "Central Avenue Southwest, Atlanta",
+      "public": true,
+      "review": [
+        {
+          "author": "Jane",
+          "email": "janeinpain@gmail.com",
+          "rating": 2,
+          "comment": "Typical dive bar bathroom. Gross"
+        }
+      ]
+    }
+  ]
 }
+
+]
