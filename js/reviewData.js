@@ -350,6 +350,12 @@ var reviewData = [
         "email": "kellythebasic@gmail.com",
         "rating": 4,
         "comment": "Totally great bathroom."
+      },
+      {
+        "author": "DeeDee",
+        "email": "deedee@gmail.com",
+        "rating": 2,
+        "comment": "Totally great bathroom."
       }
     ]
   },
@@ -410,6 +416,12 @@ var reviewData = [
         "email": "mikelovestile@gmail.com",
         "rating": 1,
         "comment": "Asked to use their restroom after buying $1k worth of tile, but they said no. I will never go back."
+      },
+      {
+        "author": "Kyle",
+        "email": "kylethetile@beechwoodtile.com",
+        "rating": 3,
+        "comment": "I work here. Bathroom is ok."
       }
     ]
   },

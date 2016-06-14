@@ -45,16 +45,35 @@ app.factory('googleMaps', function() {
           map: map,
           position: place.geometry.location
         });
+        function linkData(placeId) {
+          for (var i = 0; i < reviewData.length; i++) {
+            if (placeId === reviewData[i].place_id) {
+              console.log(reviewData[i]);
+              return reviewData[i];
+            }
+          }
+        }
+        function ratingAverage(placeId) {
+          debugger;
+          var someLocation = linkData(place.place_id);
+          var sum = 0;
+          for (var i = 0; i < someLocation.review.length; i++) {
+            sum += someLocation.review[i].rating;
+          }
+          console.log(sum / someLocation.review.length);
+          return sum / someLocation.review.length;
+        }
         google.maps.event.addListener(marker, 'click', function() {
           var windowContent =
           '<div class="content"><p>' + place.name + '<br>' +
-          place.vicinity + '<br>throne rating: ' + 'rating' +
-          '<br><a href="#">rate this throne</a></p>' + '<p class="rating"><span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span></p>'+ '</div>';
+          place.vicinity + '<br>average throne rating: ' + ratingAverage(linkData(place.place_id)) +
+          ' stars<br><a href="#">rate this throne</a></p>' + '<p class="rating"><span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span></p>'+ '</div>';
 
           infowindow.setContent(windowContent);
           infowindow.open(map, this);
         });
       }
+
     }
   };
 });
