@@ -43,7 +43,8 @@ app.factory('googleMaps', function() {
         var placeLoc = place.geometry.location;
         var marker = new google.maps.Marker({
           map: map,
-          position: place.geometry.location
+          position: place.geometry.location,
+          icon: 'bathroomsymbolsmall.png'
         });
         function linkData(placeId) {
           for (var i = 0; i < reviewData.length; i++) {
