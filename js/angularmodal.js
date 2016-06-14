@@ -38,7 +38,7 @@ app.controller('MainController', function($scope) {
     function linkData(placeId) {
       for (var i = 0; i < reviewData.length; i++) {
         if (placeId === reviewData[i].place_id) {
-          console.log(reviewData[i]);
+          // console.log(reviewData[i]);
           return reviewData[i];
         }
       }
@@ -60,7 +60,7 @@ app.controller('MainController', function($scope) {
 
     google.maps.event.addListener(marker, 'click', function($scope) {
       $scope.place = place;
-      console.log(place);
+      // console.log(place);
 
       var windowContent =
       '<div class="content"><p>' + place.name + '<br>' +
