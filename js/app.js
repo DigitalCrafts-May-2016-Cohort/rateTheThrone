@@ -54,20 +54,22 @@ app.factory('googleMaps', function() {
           }
         }
         function ratingAverage(placeId) {
-          debugger;
           var someLocation = linkData(place.place_id);
           var sum = 0;
+          if (someLocation.review.length === 0) {
+            return "No reviews yet!";
+          }
           for (var i = 0; i < someLocation.review.length; i++) {
             sum += someLocation.review[i].rating;
           }
           console.log(sum / someLocation.review.length);
-          return sum / someLocation.review.length;
+          return sum / someLocation.review.length + " stars";
         }
         google.maps.event.addListener(marker, 'click', function() {
           var windowContent =
           '<div class="content"><p>' + place.name + '<br>' +
           place.vicinity + '<br>average throne rating: ' + ratingAverage(linkData(place.place_id)) +
-          ' stars<br><a href="#">rate this throne</a></p>' + '<p class="rating"><span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span></p>'+ '</div>';
+          '<br><a href="#">rate this throne</a></p>' + '<p class="rating"><span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span></p>'+ '</div>';
 
           infowindow.setContent(windowContent);
           infowindow.open(map, this);
@@ -84,4 +86,18 @@ app.controller('MainController', function($scope, googleMaps) {
   var map = googleMaps.newMap(atlanta);
   googleMaps.addMarker(place, map);
   console.log(reviewData);
+});
+
+app.controller('ReviewController', function($scope) {
+  $scope.author = author;
+  $scope.rating = rating;
+  $scope.comment = comment;
+
+  $scope.addReview = function() {
+    var reviewBeingAdded = {
+      "author": $scope.author,
+      "rating": $scope.rating,
+      "comment": $scope.comment
+    };
+  };
 });
