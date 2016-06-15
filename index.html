@@ -67,15 +67,16 @@
   <div>
     <script type="text/ng-template" id="myModalContent.html">
         <div class="modal-header">
-            <h3 class="modal-title">I'm a modal!</h3>
+            <h3 class="modal-title">Rate This Throne!</h3>
+            <h5 class="modal-title">{{blah}}</h5>
         </div>
         <div class="modal-body">
             <ul>
-                <li ng-repeat="item in items">
-                    <a href="#" ng-click="$event.preventDefault(); selected.item = item">{{ item }}</a>
+                <li ng-repeat="throne in place">
+                    <a href="#" ng-click="$event.preventDefault(); selected.item = item">{{ throne }}</a>
                 </li>
             </ul>
-            Selected: <b>{{ selected.item }}</b>
+            Selected: <b>{{ throne.place_id }}</b>
         </div>
         <div class="modal-footer">
             <button class="btn btn-primary" type="button" ng-click="ok()">OK</button>

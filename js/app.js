@@ -7,7 +7,7 @@ var place;
 
 app.factory('modal', function($uibModal){
   return {
-    openModal: function(size) {
+    openModal: function(placeID, size) {
       var modalInstance = $uibModal.open({
         // animation: $scope.animationsEnabled,
         templateUrl: 'myModalContent.html',
@@ -20,7 +20,7 @@ app.factory('modal', function($uibModal){
         }
       });
     }
-  }
+  };
 });
 
 app.factory('googleMaps', function($uibModal, modal) {
@@ -35,7 +35,7 @@ app.factory('googleMaps', function($uibModal, modal) {
       map = new google.maps.Map(element, mapOptions);
       return map;
     },
-    addMarker: function(result, map) {
+    addMarker: function(result, map, $scope) {
       infowindow = new google.maps.InfoWindow();
 
       var service = new google.maps.places.PlacesService(map);
@@ -84,8 +84,23 @@ app.factory('googleMaps', function($uibModal, modal) {
           console.log(sum / someLocation.review.length);
           return sum / someLocation.review.length + " stars";
         }
+        // setTimeout(function() {
+        //   $scope.blah = 'NOT HELLO';
+        //   $scope.$apply();
+        // }, 1000);
         google.maps.event.addListener(marker, 'click', function() {
-          modal.openModal();
+          modal.openModal(place.place_id, 'lg');
+          setTimeout(function() {
+            $scope.blah = 'NOT HELLO';
+            $scope.$apply();
+            console.log('did apply');
+          }, 1000);
+          console.log('Was here');
+          // $scope.averageRating = ratingAverage(linkData(place.place_id));
+          // $scope.blah = 'NOT HELLO';
+          // $scope.$apply();
+          console.log($scope.averageRating);
+          // $scope.modalData = ;
         });
       }
 
@@ -97,8 +112,12 @@ app.factory('googleMaps', function($uibModal, modal) {
 
 app.controller('MainController', function($scope, googleMaps, $uibModal, modal) {
   var map = googleMaps.newMap(atlanta);
-  googleMaps.addMarker(place, map);
+  googleMaps.addMarker(place, map, $scope);
   console.log(reviewData);
+  setTimeout(function() {
+    $scope.blah = 'HELLO';
+    $scope.$apply();
+  }, 1000);
 
   $scope.open = function (size) {
     var modalInstance = $uibModal.open({
@@ -108,9 +127,9 @@ app.controller('MainController', function($scope, googleMaps, $uibModal, modal) 
       size: size,
       resolve: {
         items: function () {
-          return $scope.items;
+          return $scope.place;
         }
       }
     });
-  }
+  };
 });
