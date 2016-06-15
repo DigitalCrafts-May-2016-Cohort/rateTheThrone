@@ -1,11 +1,29 @@
-var app = angular.module('rateThroneApp', []);
+var app = angular.module('rateThroneApp', ['ui.bootstrap']);
 
 var map;
 var infowindow;
 var atlanta = {lat: 33.748995, lng: -84.387982};
 var place;
 
-app.factory('googleMaps', function() {
+app.factory('modal', function($uibModal){
+  return {
+    openModal: function(size) {
+      var modalInstance = $uibModal.open({
+        // animation: $scope.animationsEnabled,
+        templateUrl: 'myModalContent.html',
+        controller: 'MainController',
+        size: size,
+        resolve: {
+          items: function () {
+            return;
+          }
+        }
+      });
+    }
+  }
+});
+
+app.factory('googleMaps', function($uibModal, modal) {
   return {
     newMap: function(city) {
 
@@ -67,14 +85,7 @@ app.factory('googleMaps', function() {
           return sum / someLocation.review.length + " stars";
         }
         google.maps.event.addListener(marker, 'click', function() {
-
-          var windowContent =
-          '<div class="content"><p>' + place.name + '<br>' +
-          place.vicinity + '<br>average throne rating: ' + ratingAverage(linkData(place.place_id)) +
-          '<br><a href="#" data-toggle="modal" data-target="#myModal">rate this throne</a></p>' + '<p class="rating"><span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span></p>'+ '</div>';
-
-          infowindow.setContent(windowContent);
-          infowindow.open(map, this);
+          modal.openModal();
         });
       }
 
@@ -84,22 +95,22 @@ app.factory('googleMaps', function() {
 
 
 
-app.controller('MainController', function($scope, googleMaps) {
+app.controller('MainController', function($scope, googleMaps, $uibModal, modal) {
   var map = googleMaps.newMap(atlanta);
   googleMaps.addMarker(place, map);
   console.log(reviewData);
-});
 
-// app.controller('ReviewController', function($scope) {
-//   $scope.author = author;
-//   $scope.rating = rating;
-//   $scope.comment = comment;
-//
-//   $scope.addReview = function() {
-//     var reviewBeingAdded = {
-//       "author": $scope.author,
-//       "rating": $scope.rating,
-//       "comment": $scope.comment
-//     };
-//   };
-// });
+  $scope.open = function (size) {
+    var modalInstance = $uibModal.open({
+      animation: $scope.animationsEnabled,
+      templateUrl: 'myModalContent.html',
+      controller: 'MainController',
+      size: size,
+      resolve: {
+        items: function () {
+          return $scope.items;
+        }
+      }
+    });
+  }
+});

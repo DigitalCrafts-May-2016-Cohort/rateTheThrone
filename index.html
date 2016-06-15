@@ -5,6 +5,7 @@
   <title>Rate The Throne</title>
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="ui-bootstrap-custom-build/ui-bootstrap-custom-1.3.3-csp.css">
   <!-- FontAwesome -->
   <link rel="stylesheet" href="css/font-awesome.min.css">
   <!-- Animate CSS -->
@@ -23,7 +24,7 @@
   <div id="map"></div>
 
   <div id="infoBar">
-    <ul>
+    <!-- <ul>
       <h4>Reviews</h4>
       <li ng-repeat="review in place.review">
         <blockquote>
@@ -32,20 +33,20 @@
           <cite class="clearfix">—{{review.author}}</cite>
         </blockquote>
       </li>
-    </ul>
+    </ul> -->
 
     <!--  Review Form -->
-    <form name="reviewForm">
+    <!-- <form name="reviewForm"> -->
 
       <!--  Live Preview -->
-      <blockquote>
+      <!-- <blockquote>
         <strong>{{reviewCtrl.review.stars}} Stars</strong>
         {{reviewCtrl.review.body}}
         <cite class="clearfix">—{{reviewCtrl.review.author}}</cite>
-      </blockquote>
+      </blockquote> -->
 
       <!--  Review Form -->
-      <h4>Submit a Review</h4>
+      <!-- <h4>Submit a Review</h4>
       <fieldset class="form-group">
         <select ng-model="rating" class="form-control" ng-options="stars for stars in [5,4,3,2,1]" title="Stars">
           <option value="">Rate the Throne</option>
@@ -61,36 +62,33 @@
         <input ng-click="addReview()" type="submit" class="btn btn-primary pull-right" value="Submit Review" />
       </fieldset>
     </form>
-  </div>
+  </div> -->
 
-  <div class="modal fade" id="myModal" role="dialog">
-    <div class="modal-dialog">
-
-      <!-- Modal content-->
-      <div class="modal-content">
+  <div>
+    <script type="text/ng-template" id="myModalContent.html">
         <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Submit Your Review!</h4>
+            <h3 class="modal-title">I'm a modal!</h3>
         </div>
         <div class="modal-body">
-          <p>This is where we want to show the review form</p>
-
-        </div>
-        <div class="modal-header">
-          <h4 class="modal-title">Read Previous Reviews</h4>
-        </div>
-        <div class="modal-body" id="modalInfo">
-          <p>This is where we want to show previous reviews</p>
+            <ul>
+                <li ng-repeat="item in items">
+                    <a href="#" ng-click="$event.preventDefault(); selected.item = item">{{ item }}</a>
+                </li>
+            </ul>
+            Selected: <b>{{ selected.item }}</b>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button class="btn btn-primary" type="button" ng-click="ok()">OK</button>
+            <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
         </div>
-      </div>
+    </script>
 
-    </div>
+    <button type="button" class="btn btn-default" ng-click="open()">Open me!</button>
+    <button type="button" class="btn btn-default" ng-click="open('lg')">Large modal</button>
+    <button type="button" class="btn btn-default" ng-click="open('sm')">Small modal</button>
+    <button type="button" class="btn btn-default" ng-click="toggleAnimation()">Toggle Animation ({{ animationsEnabled }})</button>
+    <div ng-show="selected">Selection from a modal: {{ selected }}</div>
   </div>
-
-
 
 
   <!-- jQuery -->
@@ -101,10 +99,13 @@
   <script src="js/angular.min.js"></script>
   <!-- AngularJS Routing -->
   <script src="js/angular-route.js"></script>
+  <script src="ui-bootstrap-custom-build/ui-bootstrap-custom-1.3.3.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-animate.js"></script>
+    <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-1.3.3.js"></script>
   <!-- Google Maps API -->
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD5G4Ayi5do4-xDcxY-C_kDjqllRidNZPw&libraries=places"></script>
   <!-- Custom JS -->
-  <script src="js/angularmodal.js"></script>
+  <script src="js/app.js"></script>
   <script src="js/reviewData.js"></script>
 
 
