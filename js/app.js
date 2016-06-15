@@ -5,7 +5,7 @@ var infowindow;
 var atlanta = {lat: 33.748995, lng: -84.387982};
 var place;
 
-app.controller('ModalController', function($scope, place) {
+app.controller('ModalController', function($scope, place, $uibModalInstance) {
   $scope.place = place;
   $scope.location = linkData(place.place_id);
   $scope.averageRating = ratingAverage(linkData(place.place_id));
@@ -42,6 +42,10 @@ app.controller('ModalController', function($scope, place) {
     return sum / someLocation.review.length + " stars";
   }
 
+  $scope.cancel = function () {
+    $uibModalInstance.dismiss('cancel');
+  };
+
 });
 
 app.factory('modal', function($uibModal){
@@ -69,7 +73,7 @@ app.factory('googleMaps', function($uibModal, modal) {
       var element = document.getElementById('map');
       var mapOptions = {
         center: atlanta,
-        zoom: 15
+        zoom: 17
       };
       map = new google.maps.Map(element, mapOptions);
       return map;

@@ -23,20 +23,10 @@
 
   <div id="map"></div>
 
-  <div id="infoBar">
-      <!--  Live Preview -->
-      <!-- <blockquote>
-        <strong>{{reviewCtrl.review.stars}} Stars</strong>
-        {{reviewCtrl.review.body}}
-        <cite class="clearfix">—{{reviewCtrl.review.author}}</cite>
-      </blockquote> -->
-
-
-  </div>
-
   <div>
     <script type="text/ng-template" id="myModalContent.html">
         <div class="modal-header">
+          <button class="btn btn-warning pull-right" type="button" ng-click="cancel()">X</button>
             <h3 class="modal-title">Rate This Throne!</h3>
             <h4 class="modal-title">{{place.name}}</h4>
             <h5 class="modal-title">{{place.vicinity}}</h5>
@@ -47,6 +37,7 @@
           <form ng-submit="addNewReview(author, rating, comment)" name="reviewForm">
 
           <h4>Submit a Review!</h4>
+
           <fieldset class="form-group">
             <select ng-model="rating" class="form-control" ng-options="stars for stars in [5,4,3,2,1]" title="Stars">
               <option value="">Rate the Throne</option>
@@ -60,6 +51,7 @@
           </fieldset>
           <fieldset class="form-group">
             <input type="submit" class="btn btn-primary pull-right" value="Submit Review" />
+
           </fieldset>
         </form>
         </div>
@@ -73,10 +65,9 @@
                 <hr>
             </ul>
         </div>
-        <div class="modal-footer">
-            <button class="btn btn-primary" type="button" ng-click="ok()">OK</button>
-            <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
-        </div>
+        <!-- <div class="modal-footer">
+            <button class="btn btn-warning" type="button" ng-click="cancel()">Close</button>
+        </div> -->
     </script>
   </div>
 
