@@ -7,11 +7,14 @@ var place;
 
 app.controller('ModalController', function($scope, place) {
   $scope.place = place;
+  $scope.location = linkData(place.place_id);
+  $scope.averageRating = ratingAverage(linkData(place.place_id));
+  $scope.modalReviewData = $scope.location.review;
+  console.log($scope.modalReviewData);
 
   function linkData(placeId) {
     for (var i = 0; i < reviewData.length; i++) {
       if (placeId === reviewData[i].place_id) {
-        console.log(reviewData[i]);
         return reviewData[i];
       }
     }
@@ -25,9 +28,9 @@ app.controller('ModalController', function($scope, place) {
     for (var i = 0; i < someLocation.review.length; i++) {
       sum += someLocation.review[i].rating;
     }
-    console.log(sum / someLocation.review.length);
     return sum / someLocation.review.length + " stars";
   }
+
 
 });
 
@@ -90,43 +93,32 @@ app.factory('googleMaps', function($uibModal, modal) {
           position: place.geometry.location,
           icon: 'bathroomsymbolsmall.png'
         });
-        function linkData(placeId) {
-          for (var i = 0; i < reviewData.length; i++) {
-            if (placeId === reviewData[i].place_id) {
-              console.log(reviewData[i]);
-              return reviewData[i];
-            }
-          }
-        }
-        function ratingAverage(placeId) {
-          var someLocation = linkData(place.place_id);
-          var sum = 0;
-          if (someLocation.review.length === 0) {
-            return "No reviews yet!";
-          }
-          for (var i = 0; i < someLocation.review.length; i++) {
-            sum += someLocation.review[i].rating;
-          }
-          console.log(sum / someLocation.review.length);
-          return sum / someLocation.review.length + " stars";
-        }
+        // function linkData(placeId) {
+        //   for (var i = 0; i < reviewData.length; i++) {
+        //     if (placeId === reviewData[i].place_id) {
+        //       console.log(reviewData[i]);
+        //       return reviewData[i];
+        //     }
+        //   }
+        // }
+        // function ratingAverage(placeId) {
+        //   var someLocation = linkData(place.place_id);
+        //   var sum = 0;
+        //   if (someLocation.review.length === 0) {
+        //     return "No reviews yet!";
+        //   }
+        //   for (var i = 0; i < someLocation.review.length; i++) {
+        //     sum += someLocation.review[i].rating;
+        //   }
+        //   console.log(sum / someLocation.review.length);
+        //   return sum / someLocation.review.length + " stars";
+        // }
         // setTimeout(function() {
         //   $scope.blah = 'NOT HELLO';
         //   $scope.$apply();
         // }, 1000);
         google.maps.event.addListener(marker, 'click', function() {
           modal.openModal(place, 'lg');
-          setTimeout(function() {
-            $scope.blah = 'NOT HELLO';
-            $scope.$apply();
-            console.log('did apply');
-          }, 1000);
-          console.log('Was here');
-          // $scope.averageRating = ratingAverage(linkData(place.place_id));
-          // $scope.blah = 'NOT HELLO';
-          // $scope.$apply();
-          console.log($scope.averageRating);
-          // $scope.modalData = ;
         });
       }
 
@@ -139,10 +131,4 @@ app.factory('googleMaps', function($uibModal, modal) {
 app.controller('MainController', function($scope, googleMaps, $uibModal, modal) {
   var map = googleMaps.newMap(atlanta);
   googleMaps.addMarker(place, map, $scope);
-  console.log(reviewData);
-  setTimeout(function() {
-    $scope.blah = 'HELLO';
-    $scope.$apply();
-  }, 1000);
-
 });

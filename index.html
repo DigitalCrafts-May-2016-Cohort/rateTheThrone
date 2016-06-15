@@ -69,14 +69,20 @@
         <div class="modal-header">
             <h3 class="modal-title">Rate This Throne!</h3>
             <h5 class="modal-title">{{place.name}}</h5>
+            <h5 class="modal-title">{{place.vicinity}}</h5>
+            <h5 class="modal-title">Throne Rating: {{averageRating}}</h5>
+
+
         </div>
         <div class="modal-body">
-            <ul>
-                <li ng-repeat="throne in place">
-                    <a href="#" ng-click="$event.preventDefault(); selected.item = item">{{ throne }}</a>
-                </li>
+          <h6>Reviews</h6>
+          <hr>
+            <ul ng-repeat="singleReview in modalReviewData">
+                <li >Author: {{singleReview.author}}</li>
+                <li >Rating: {{singleReview.rating}} stars</li>
+                <li >Review: {{singleReview.comment}}</li>
+                <hr>
             </ul>
-            Selected: <b>{{ throne.place_id }}</b>
         </div>
         <div class="modal-footer">
             <button class="btn btn-primary" type="button" ng-click="ok()">OK</button>
