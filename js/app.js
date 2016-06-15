@@ -10,7 +10,7 @@ app.controller('ModalController', function($scope, place, $uibModalInstance) {
   $scope.location = linkData(place.place_id);
   $scope.averageRating = ratingAverage(linkData(place.place_id));
   $scope.modalReviewData = $scope.location.review;
-  // console.log($scope.modalReviewData);
+  $scope.publicOrNot = $scope.location.public;
 
   $scope.addNewReview = function(author, rating, comment) {
     $scope.newReview = {
@@ -18,9 +18,8 @@ app.controller('ModalController', function($scope, place, $uibModalInstance) {
       "rating": rating,
       "comment": comment
     };
-    console.log($scope.newReview);
-    console.log(place.place_id);
     $scope.modalReviewData.push($scope.newReview);
+    document.reviewForm.reset();
   };
 
   function linkData(placeId) {
@@ -102,47 +101,68 @@ app.factory('googleMaps', function($uibModal, modal) {
 
       function createMarker(place) {
         var placeLoc = place.geometry.location;
-        var marker = new google.maps.Marker({
-          map: map,
-          position: place.geometry.location,
-          icon: 'bathroomsymbolsmall.png'
-        });
-        // function linkData(placeId) {
-        //   for (var i = 0; i < reviewData.length; i++) {
-        //     if (placeId === reviewData[i].place_id) {
-        //       console.log(reviewData[i]);
-        //       return reviewData[i];
-        //     }
-        //   }
-        // }
-        // function ratingAverage(placeId) {
-        //   var someLocation = linkData(place.place_id);
-        //   var sum = 0;
-        //   if (someLocation.review.length === 0) {
-        //     return "No reviews yet!";
-        //   }
-        //   for (var i = 0; i < someLocation.review.length; i++) {
-        //     sum += someLocation.review[i].rating;
-        //   }
-        //   console.log(sum / someLocation.review.length);
-        //   return sum / someLocation.review.length + " stars";
-        // }
-        // setTimeout(function() {
-        //   $scope.blah = 'NOT HELLO';
-        //   $scope.$apply();
-        // }, 1000);
-        google.maps.event.addListener(marker, 'click', function() {
-          modal.openModal(place, 'lg');
-        });
+        var theIcon = 'bathroomsymbolsmall.png';
+        var theRating = ratingAverage(place.place_id);
+        var publicRestroom = linkData(place.place_id).public;
+
+        console.log(place);
+
+
+        console.log("public" + publicRestroom);
+        if (publicRestroom === false) {
+          theIcon = 'noGo.png';
+        } else {
+          if (theRating >= 2 && theRating < 4) {
+            theIcon = 'orange.png';
+          } else if (theRating >= 4) {
+            theIcon = 'green.png';
+          } else if (theRating < 2) {
+            theIcon = 'red.png';
+          }}
+
+
+          var marker = new google.maps.Marker({
+            map: map,
+            position: place.geometry.location,
+            icon: theIcon
+            // 'bathroomsymbolsmall.png'
+          });
+          function linkData(placeId) {
+            for (var i = 0; i < reviewData.length; i++) {
+              if (placeId === reviewData[i].place_id) {
+                console.log(reviewData[i]);
+                return reviewData[i];
+              }
+            }
+          }
+          function ratingAverage(placeId) {
+            var someLocation = linkData(place.place_id);
+            var sum = 0;
+            if (someLocation.review.length === 0) {
+              return "No reviews yet!";
+            }
+            for (var i = 0; i < someLocation.review.length; i++) {
+              sum += someLocation.review[i].rating;
+            }
+            console.log(sum / someLocation.review.length);
+            return sum / someLocation.review.length;
+          }
+          // setTimeout(function() {
+          //   $scope.blah = 'NOT HELLO';
+          //   $scope.$apply();
+          // }, 1000);
+          google.maps.event.addListener(marker, 'click', function() {
+            modal.openModal(place, 'lg');
+          });
+        }
+
       }
-
-    }
-  };
-});
+    };
+  });
 
 
 
-app.controller('MainController', function($scope, googleMaps, $uibModal, modal) {
-  var map = googleMaps.newMap(atlanta);
-  googleMaps.addMarker(place, map, $scope);
-});
+  app.controller('MainController', function($scope, googleMaps, $uibModal, modal) {
+    var map = googleMaps.newMap(atlanta);
+    googleMaps.addMarker(place, map, $scope);
+  });

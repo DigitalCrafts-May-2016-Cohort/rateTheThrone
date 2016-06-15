@@ -585,7 +585,7 @@ var reviewData = [
       {
         "author": "Jane",
         "email": "janeinpain@gmail.com",
-        "rating": 2,
+        "rating": 1,
         "comment": "Typical dive bar bathroom. Gross"
       }
     ]
