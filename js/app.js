@@ -10,7 +10,18 @@ app.controller('ModalController', function($scope, place) {
   $scope.location = linkData(place.place_id);
   $scope.averageRating = ratingAverage(linkData(place.place_id));
   $scope.modalReviewData = $scope.location.review;
-  console.log($scope.modalReviewData);
+  // console.log($scope.modalReviewData);
+
+  $scope.addNewReview = function(author, rating, comment) {
+    $scope.newReview = {
+      "author": author,
+      "rating": rating,
+      "comment": comment
+    };
+    console.log($scope.newReview);
+    console.log(place.place_id);
+    $scope.modalReviewData.push($scope.newReview);
+  };
 
   function linkData(placeId) {
     for (var i = 0; i < reviewData.length; i++) {
@@ -30,7 +41,6 @@ app.controller('ModalController', function($scope, place) {
     }
     return sum / someLocation.review.length + " stars";
   }
-
 
 });
 

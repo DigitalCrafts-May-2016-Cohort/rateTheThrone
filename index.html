@@ -24,20 +24,6 @@
   <div id="map"></div>
 
   <div id="infoBar">
-    <!-- <ul>
-      <h4>Reviews</h4>
-      <li ng-repeat="review in place.review">
-        <blockquote>
-          <strong>{{review.stars}} Stars</strong>
-          {{review.body}}
-          <cite class="clearfix">—{{review.author}}</cite>
-        </blockquote>
-      </li>
-    </ul> -->
-
-    <!--  Review Form -->
-    <!-- <form name="reviewForm"> -->
-
       <!--  Live Preview -->
       <!-- <blockquote>
         <strong>{{reviewCtrl.review.stars}} Stars</strong>
@@ -45,34 +31,37 @@
         <cite class="clearfix">—{{reviewCtrl.review.author}}</cite>
       </blockquote> -->
 
-      <!--  Review Form -->
-      <!-- <h4>Submit a Review</h4>
-      <fieldset class="form-group">
-        <select ng-model="rating" class="form-control" ng-options="stars for stars in [5,4,3,2,1]" title="Stars">
-          <option value="">Rate the Throne</option>
-        </select>
-      </fieldset>
-      <fieldset class="form-group">
-        <input ng-model="author" type="name" class="form-control" placeholder="John Doo" title="Name" />
-      </fieldset>
-      <fieldset class="form-group">
-        <textarea ng-model="comment" class="form-control" placeholder="Write a short review of the throne" title="Review"></textarea>
-      </fieldset>
-      <fieldset class="form-group">
-        <input ng-click="addReview()" type="submit" class="btn btn-primary pull-right" value="Submit Review" />
-      </fieldset>
-    </form>
-  </div> -->
+
+  </div>
 
   <div>
     <script type="text/ng-template" id="myModalContent.html">
         <div class="modal-header">
             <h3 class="modal-title">Rate This Throne!</h3>
-            <h5 class="modal-title">{{place.name}}</h5>
+            <h4 class="modal-title">{{place.name}}</h4>
             <h5 class="modal-title">{{place.vicinity}}</h5>
             <h5 class="modal-title">Throne Rating: {{averageRating}}</h5>
+        </div>
+        <div>
+          <!--  Review Form -->
+          <form ng-submit="addNewReview(author, rating, comment)" name="reviewForm">
 
-
+          <h4>Submit a Review!</h4>
+          <fieldset class="form-group">
+            <select ng-model="rating" class="form-control" ng-options="stars for stars in [5,4,3,2,1]" title="Stars">
+              <option value="">Rate the Throne</option>
+            </select>
+          </fieldset>
+          <fieldset class="form-group">
+            <input ng-model="author" type="name" class="form-control" placeholder="John Doo" title="Name" />
+          </fieldset>
+          <fieldset class="form-group">
+            <textarea ng-model="comment" class="form-control" placeholder="Write a short review of the throne" title="Review"></textarea>
+          </fieldset>
+          <fieldset class="form-group">
+            <input type="submit" class="btn btn-primary pull-right" value="Submit Review" />
+          </fieldset>
+        </form>
         </div>
         <div class="modal-body">
           <h6>Reviews</h6>
