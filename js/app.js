@@ -5,17 +5,43 @@ var infowindow;
 var atlanta = {lat: 33.748995, lng: -84.387982};
 var place;
 
+app.controller('ModalController', function($scope, place) {
+  $scope.place = place;
+
+  function linkData(placeId) {
+    for (var i = 0; i < reviewData.length; i++) {
+      if (placeId === reviewData[i].place_id) {
+        console.log(reviewData[i]);
+        return reviewData[i];
+      }
+    }
+  }
+  function ratingAverage(placeId) {
+    var someLocation = linkData(place.place_id);
+    var sum = 0;
+    if (someLocation.review.length === 0) {
+      return "No reviews yet!";
+    }
+    for (var i = 0; i < someLocation.review.length; i++) {
+      sum += someLocation.review[i].rating;
+    }
+    console.log(sum / someLocation.review.length);
+    return sum / someLocation.review.length + " stars";
+  }
+
+});
+
 app.factory('modal', function($uibModal){
   return {
-    openModal: function(placeID, size) {
+    openModal: function(place, size) {
       var modalInstance = $uibModal.open({
         // animation: $scope.animationsEnabled,
         templateUrl: 'myModalContent.html',
-        controller: 'MainController',
+        controller: 'ModalController',
         size: size,
         resolve: {
-          items: function () {
-            return;
+          place: function () {
+            return place;
           }
         }
       });
@@ -89,7 +115,7 @@ app.factory('googleMaps', function($uibModal, modal) {
         //   $scope.$apply();
         // }, 1000);
         google.maps.event.addListener(marker, 'click', function() {
-          modal.openModal(place.place_id, 'lg');
+          modal.openModal(place, 'lg');
           setTimeout(function() {
             $scope.blah = 'NOT HELLO';
             $scope.$apply();
@@ -119,17 +145,4 @@ app.controller('MainController', function($scope, googleMaps, $uibModal, modal) 
     $scope.$apply();
   }, 1000);
 
-  $scope.open = function (size) {
-    var modalInstance = $uibModal.open({
-      animation: $scope.animationsEnabled,
-      templateUrl: 'myModalContent.html',
-      controller: 'MainController',
-      size: size,
-      resolve: {
-        items: function () {
-          return $scope.place;
-        }
-      }
-    });
-  };
 });

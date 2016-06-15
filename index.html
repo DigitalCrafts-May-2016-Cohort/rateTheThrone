@@ -68,7 +68,7 @@
     <script type="text/ng-template" id="myModalContent.html">
         <div class="modal-header">
             <h3 class="modal-title">Rate This Throne!</h3>
-            <h5 class="modal-title">{{blah}}</h5>
+            <h5 class="modal-title">{{place.name}}</h5>
         </div>
         <div class="modal-body">
             <ul>
@@ -83,12 +83,6 @@
             <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
         </div>
     </script>
-
-    <button type="button" class="btn btn-default" ng-click="open()">Open me!</button>
-    <button type="button" class="btn btn-default" ng-click="open('lg')">Large modal</button>
-    <button type="button" class="btn btn-default" ng-click="open('sm')">Small modal</button>
-    <button type="button" class="btn btn-default" ng-click="toggleAnimation()">Toggle Animation ({{ animationsEnabled }})</button>
-    <div ng-show="selected">Selection from a modal: {{ selected }}</div>
   </div>
 
 
