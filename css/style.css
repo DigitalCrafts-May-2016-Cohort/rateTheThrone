@@ -1,8 +1,9 @@
 body {
-     height: 100%;
-     margin: 0;
-     padding: 0;
-     box-sizing: border-box;
+  background-image: url(batthern.png);
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 #map {
@@ -33,6 +34,9 @@ form {
 }
 h1 {
   text-align: center;
+  color: #444444;
+  font-family: 'Shadows Into Light', cursive;
+  text-shadow: 3px 3px silver;
 }
 
 .btn {

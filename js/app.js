@@ -20,6 +20,7 @@ app.controller('ModalController', function($scope, place, $uibModalInstance) {
     };
     $scope.modalReviewData.push($scope.newReview);
     document.reviewForm.reset();
+    document.getElementById('submit-review').style.visibility='hidden';
   };
 
   function linkData(placeId) {
