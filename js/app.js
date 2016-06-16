@@ -11,7 +11,6 @@ app.controller('ModalController', function($scope, place, $uibModalInstance) {
   $scope.averageRating = ratingAverage(linkData(place.place_id));
   $scope.modalReviewData = $scope.location.review;
   $scope.publicOrNot = $scope.location.public;
-  debugger;
 
   $scope.addNewReview = function(author, rating, comment) {
     $scope.newReview = {
