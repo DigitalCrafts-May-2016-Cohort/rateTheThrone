@@ -11,7 +11,7 @@ Rate the Throne is a crowdsourced public restroom rating app. Users can use Rate
 * AngularJS
 * Bootstrap 3
 * AngularUI - Bootstrap Modals
-* Animate CSS 
+* Animate CSS
 
 
 ##Contributors
@@ -35,6 +35,10 @@ Rate the Throne Review Modal
 
 ![Rate the Throne](images/modalScreenShot.png)
 
+
+SCRUM Board
+
+![Rate the Throne](images/SCRUMboard.jpg)
 
 ##3 contributions your team would like for others to add to the project
 1. Add a back end to store review data
