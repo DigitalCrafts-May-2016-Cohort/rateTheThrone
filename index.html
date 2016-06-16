@@ -14,10 +14,7 @@
   <link rel="stylesheet" href="css/style.css">
   <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light" rel="stylesheet" type="text/css">
-
-
-
-
+  <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
 </head>
 
 <body ng-app="rateThroneApp" ng-controller="MainController">
@@ -28,16 +25,18 @@
   <div>
     <script type="text/ng-template" id="myModalContent.html">
       <div class="modal-header">
-        <button class="btn btn-warning pull-right" type="button" ng-click="cancel()">X</button>
+        <button class="btn cancel pull-right" type="button" ng-click="cancel()" >X</button>
         <h3 class="modal-title">Rate This Throne!</h3>
-        <h4 class="modal-title">{{place.name}}</h4>
-        <h5 class="modal-title">{{place.vicinity}}</h5>
-        <h5 class="modal-title">Throne Rating: {{averageRating}}</h5>
-        <h5 ng-show="{{publicOrNot}}" class="modal-title">Restroom Open to Public</h5>
-        <h5 ng-show="{{!publicOrNot}}" class="modal-title">Restroom Closed to Public</h5>
+          <div class="placeInfo">
+          <h4 class="modal-title underline">{{place.name}}</h4>
+          <h5 class="modal-title">{{place.vicinity}}</h5>
+          <h5 class="modal-title">Throne Rating: {{averageRating}}</h5>
+          <h5 ng-show="{{publicOrNot}}" class="modal-title">Restroom Open to Public</h5>
+          <h5 ng-show="{{!publicOrNot}}" class="modal-title">Restroom Closed to Public</h5>
 
-        <h5 ng-show="{{place.opening_hours.open_now}}"class="modal-title">Open Now</h5>
-                <h5 ng-show="{{!place.opening_hours.open_now}}"class="modal-title">Closed Now</h5>
+          <h5 ng-show="{{place.opening_hours.open_now}}"class="modal-title">Open Now</h5>
+                  <h5 ng-show="{{!place.opening_hours.open_now}}"class="modal-title">Closed Now</h5>
+          </div>
       </div>
       <div>
         <!--  Review Form -->
