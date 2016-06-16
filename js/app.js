@@ -110,14 +110,14 @@ app.factory('googleMaps', function($uibModal, modal) {
 
         console.log("public" + publicRestroom);
         if (publicRestroom === false) {
-          theIcon = 'noGo.png';
+          theIcon = 'images/noGo.png';
         } else {
           if (theRating >= 2 && theRating < 4) {
-            theIcon = 'orange.png';
+            theIcon = 'images/orange.png';
           } else if (theRating >= 4) {
-            theIcon = 'green.png';
+            theIcon = 'images/green.png';
           } else if (theRating < 2) {
-            theIcon = 'red.png';
+            theIcon = 'images/red.png';
           }}
 
 
