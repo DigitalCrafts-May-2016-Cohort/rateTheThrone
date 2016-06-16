@@ -37,6 +37,7 @@ h1 {
   font-family: 'Shadows Into Light', cursive;
   text-shadow: 3px 3px silver;
   color: black;
+  font-size: 3em;
 }
 
 .btn {
