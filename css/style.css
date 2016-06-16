@@ -48,11 +48,10 @@ h1 {
 }
 
 .legend {
-  /*margin: auto;*/
   height: 15%;
   width: 100%;
   top: 85%;
-  background-color: white;
+  background-image: url(batthern.png);
   position: fixed;
   text-align: center;
   padding: 10px 0 0 0;
