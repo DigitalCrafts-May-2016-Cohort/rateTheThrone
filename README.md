@@ -14,7 +14,7 @@ Rate the Throne is a crowdsourced public restroom rating app. Users can use Rate
 
 
 ##Contributors
-* We worked on Rate the Throne mostly using mob programming
+We worked on Rate the Throne mostly using mob programming
 * [Tim Sanders](https://github.com/tsanders30004) - SCRUM Master
 * [Cody Barber](https://github.com/codybarber)
 * [Carolyn Daniel](https://github.com/csdaniel17)
@@ -23,6 +23,10 @@ Rate the Throne is a crowdsourced public restroom rating app. Users can use Rate
 
 
 ##Project Screenshots
+
+![Rate the Throne](images/rateTheThroneMainPage.png "Rate the Throne Homepage")
+
+![Rate the Throne](images/modalScreenShot.png "Rate the Throne Review Modal")
 
 
 ##3 contributions your team would like for others to add to the project
