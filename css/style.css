@@ -7,7 +7,7 @@ body {
 }
 
 #map {
-     height: 90%;
+     height: 75%;
      position: absolute;
      width: 100%;
      float: left;

@@ -2,7 +2,7 @@ var app = angular.module('rateThroneApp', ['ui.bootstrap']);
 
 var map;
 var infowindow;
-var atlanta = {lat: 33.748995, lng: -84.387982};
+var atlanta = {lat: 33.8486730, lng: -84.3733130};
 var place;
 
 app.controller('ModalController', function($scope, place, $uibModalInstance) {

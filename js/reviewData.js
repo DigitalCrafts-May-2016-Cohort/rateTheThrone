@@ -589,5 +589,276 @@ var reviewData = [
         "comment": "Typical dive bar bathroom. Gross"
       }
     ]
+  },
+  {
+    "name": "Ulta Beauty",
+    "place_id": "ChIJ0zBrB1oP9YgRdD7TL0laU58",
+    "address": "3495 Buckhead Station Pedestrian Bridge, Atlanta",
+    "public": true,
+    "type": "store",
+    "review": [
+      {
+        "author": "Becky",
+        "email": "beckywiththegoodhair@gmail.com",
+        "rating": 5,
+        "comment": "Soooo clean."
+      }
+    ]
+  },
+  {
+    "name": "Piu Bello",
+    "place_id": "ChIJt3HwQvUF9YgRsjOJPQ1Ux-c",
+    "address": "3330 Piedmont Road Northeast, Atlanta",
+    "public": true,
+    "type": "restaurant",
+    "review": [
+      {
+        "author": "Antonio",
+        "email": "antman@gmail.com",
+        "rating": 4,
+        "comment": "Throne was pretty nice."
+      }
+    ]
+  },
+  {
+    "name": "Jason's Deli",
+    "place_id": "ChIJt3HwQvUF9YgRnX9NoTyH29Y",
+    "address": "3330 Piedmont Road Northeast, Atlanta",
+    "public": true,
+    "type": "restaurant",
+    "review": [
+      {
+        "author": "Jason",
+        "email": "jason@jasonsdeli.com",
+        "rating": 5,
+        "comment": "I clean this bathroom myself. It's great."
+      }
+    ]
+  },
+  {
+    "name": "Maggiano's Little Italy",
+    "place_id": "ChIJFyduYFgP9YgRsb-T_vD8Fao",
+    "address": "3368 Peachtree Road, Atlanta",
+    "public": true,
+    "type": "bar",
+    "review": [
+      {
+        "author": "John",
+        "email": "john@gmail.com",
+        "rating": 2,
+        "comment": "Not a clean bathroom."
+      }
+    ]
+  },
+  {
+    "name": "Farm Burger Buckhead",
+    "place_id": "ChIJx6zWnfUF9YgRUMumutnMu7o",
+    "address": "3365 Piedmont Road Northeast, Atlanta",
+    "public": true,
+    "type": "restaurant",
+    "review": [
+      {
+        "author": "Anthony",
+        "email": "antdawg69@gmail.com",
+        "rating": 4,
+        "comment": "Great bathroom for a burger joint!"
+      }
+    ]
+  },
+  {
+    "name": "Nordstrom Rack Buckhead Station",
+    "place_id": "ChIJ2XBQJl8P9YgRkZFPCT2nHYk",
+    "address": "3495 Buckhead Loop Northeast, Atlanta",
+    "public": true,
+    "type": "store",
+    "review": [
+      {
+        "author": "Vicki",
+        "email": "stickivicki@gmail.com",
+        "rating": 3,
+        "comment": "I've seen better."
+      }
+    ]
+  },
+  {
+    "name": "Binders Art Supplies and Frames",
+    "place_id": "ChIJt3HwQvUF9YgRDZgDgBOprvM",
+    "address": "3330 Piedmont Road Northeast #18, Atlanta",
+    "public": true,
+    "type": "store",
+    "review": []
+  },
+  {
+    "name": "La Casa Del Tabaco Cigar Lounge",
+    "place_id": "ChIJt3HwQvUF9YgRtRqldyP6Tsg",
+    "address": "3330 Piedmont Road Northeast #20, Atlanta",
+    "public": true,
+    "type": "store",
+    "review": [
+      {
+        "author": "Tim",
+        "email": "tims@gmail.com",
+        "rating": 4,
+        "comment": "It's okay. Not very elegant. Extension cords everywhere."
+      }
+    ]
+  },
+  {
+    "name": "Del Frisco's Grille",
+    "place_id": "ChIJTQvTTlgP9YgRZXGxhVsYvp0",
+    "address": "Mandarin Oriental, Atlanta, 3376 Peachtree Road, Atlanta",
+    "public": true,
+    "type": "bar",
+    "review": [
+      {
+        "author": "Will",
+        "email": "tallwill@gmail.com",
+        "rating": 1,
+        "comment": "Everything was wet."
+      }
+    ]
+  },
+  {
+    "name": "Buckhead Pizza Co.",
+    "place_id": "ChIJu5qkCfYF9YgRR9krNRpjSSw",
+    "address": "3324 Peachtree Road, Atlanta",
+    "public": true,
+    "type": "restaurant",
+    "review": [
+      {
+        "author": "Topher",
+        "email": "topherthegopher@gmail.com",
+        "rating": 2,
+        "comment": "It's not very good."
+      }
+    ]
+  },
+  {
+    "name": "Bistro Niko",
+    "place_id": "ChIJ26vT7lQE9YgRnlJajnfoing",
+    "address": "3344 Peachtree Road, Atlanta",
+    "public": true,
+    "type": "bar",
+    "review": [
+      {
+        "author": "Doug",
+        "email": "doug@gmail.om",
+        "rating": 3,
+        "comment": "It's an ok bathroom."
+      }
+    ]
+  },
+  {
+    "name": "BuckBlue Print | Marketing | Design",
+    "place_id": "ChIJLdPCOWEP9YgRXWKtfnwMi8w",
+    "address": "Building 4, 3565 Piedmont Road Northeast, Atlanta",
+    "public": false,
+    "type": "store",
+    "review": []
+  },
+  {
+    "name": "Eye Gallery",
+    "place_id": "ChIJt3HwQvUF9YgRfSjt12vVi7g",
+    "address": "3330 Piedmont Road Northeast, Atlanta",
+    "public": false,
+    "type": "store",
+    "review": [
+      {
+        "author": "Katie",
+        "email": "katie@gmail.com",
+        "rating": 5,
+        "comment": "Had to go during an eye exam. Awesome experience."
+      }
+    ]
+  },
+  {
+    "name": "Marshalls",
+    "place_id": "ChIJKRA9jfQF9YgRUWsoP6GtykA",
+    "address": "3232 Peachtree St. N.E., Atlanta",
+    "public": true,
+    "type": "store",
+    "review": [
+      {
+        "author": "Marshall",
+        "email": "marshall@gmail.com",
+        "rating": 4,
+        "comment": "Pretty clean for a discount store."
+      }
+    ]
+  },
+  {
+    "name": "Flying Biscuit Cafe",
+    "place_id": "ChIJ2Vs50fUF9YgRkLCpPkMiujk",
+    "address": "Terminus Building, 3280 Peachtree Road #145, Atlanta",
+    "public": true,
+    "type": "restaurant",
+    "review": [
+      {
+        "author": "Pedro",
+        "email": "pedro@hotmail.com",
+        "rating": 2,
+        "comment": "Smelled like someone had a few too many biscuits."
+      }
+    ]
+  },
+  {
+    "name": "City Club of Buckhead",
+    "place_id": "ChIJk3oqcVgP9YgRKJ-vAcPVOOE",
+    "address": "3343 Peachtree Road #1850, Atlanta",
+    "public": true,
+    "type": "restaurant",
+    "review": [
+      {
+        "author": "Bethany",
+        "email": "beth@gmail.com",
+        "rating": 4,
+        "comment": "Great!"
+      }
+    ]
+  },
+  {
+    "name": "Relax The Back",
+    "place_id": "ChIJt3HwQvUF9YgRrwBcwX7fE5o",
+    "address": "3330 Piedmont Road Northeast Ste 2, Atlanta",
+    "public": true,
+    "type": "store",
+    "review": [
+      {
+        "author": "Jody",
+        "email": "jodyhighroller@riffraff.com",
+        "rating": 4,
+        "comment": "Was definitely able to relax my back in here if you know what i'm sayin"
+      }
+    ]
+  },
+  {
+    "name": "Whiskey Blue",
+    "place_id": "ChIJheIbPGUE9YgRhdF2tNf7Zzc",
+    "address": "3377 Peachtree Road, Atlanta",
+    "public": true,
+    "type": "restaurant",
+    "review": [
+      {
+        "author": "Toby",
+        "email": "toby@gmail.com",
+        "rating": 3,
+        "comment": "Got really hammered here and passed out in the bathroom. Wasn't a pleasant place to wake up."
+      }
+    ]
+  },
+  {
+    "name": "Bone's Restaurant",
+    "place_id": "ChIJ9SBPF_QF9YgRxq9n9FgRVmA",
+    "address": "3130 Piedmont Road Northeast, Atlanta",
+    "public": true,
+    "type": "bar",
+    "review": [
+      {
+        "author": "Carolyn",
+        "email": "carolwhocodes@js.net",
+        "rating": 4,
+        "comment": "Love this bathroom. Go here a lot in my free time."
+      }
+    ]
   }
 ];
