@@ -39,7 +39,21 @@ app.controller('ModalController', function($scope, place, $uibModalInstance) {
     for (var i = 0; i < someLocation.review.length; i++) {
       sum += someLocation.review[i].rating;
     }
-    return sum / someLocation.review.length + " stars";
+    var avg = Math.ceil(sum / someLocation.review.length);
+    console.log ("the avg is:" + avg);
+    if (avg === 5) {
+      return "★★★★★";
+    } else if (avg === 4) {
+      return "★★★★☆";
+    } else if (avg === 3) {
+      return "★★★☆☆";
+    } else if (avg === 2) {
+      return "★★☆☆☆";
+    } else if (avg === 1) {
+      return "★☆☆☆☆";
+    } else {
+      return "I need a Rating!";
+    }
   }
 
   $scope.cancel = function () {

@@ -45,6 +45,7 @@ h1 {
 
 .titleBox {
   height: 10%;
+  position: fixed;
 }
 
 .legend {
@@ -56,4 +57,6 @@ h1 {
   text-align: center;
   padding: 10px 0 0 0;
   overflow: auto;
+  font-family: 'Shadows Into Light', cursive;
+  font-size: 1.3em;
 }
