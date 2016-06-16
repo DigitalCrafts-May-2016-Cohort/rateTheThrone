@@ -36,6 +36,7 @@ h1 {
   text-align: center;
   font-family: 'Shadows Into Light', cursive;
   text-shadow: 3px 3px silver;
+  color: black;
 }
 
 .btn {
@@ -58,6 +59,7 @@ h1 {
   overflow: auto;
   font-family: 'Shadows Into Light', cursive;
   font-size: 1.3em;
+  color: black;
 }
 
 .placeInfo {
