@@ -11,6 +11,7 @@ app.controller('ModalController', function($scope, place, $uibModalInstance) {
   $scope.averageRating = ratingAverage(linkData(place.place_id));
   $scope.modalReviewData = $scope.location.review;
   $scope.publicOrNot = $scope.location.public;
+  debugger;
 
   $scope.addNewReview = function(author, rating, comment) {
     $scope.newReview = {
@@ -111,7 +112,6 @@ app.factory('googleMaps', function($uibModal, modal) {
             createMarker(results[i]);
           }
         }
-        // console.log(results);
       }
 
       function createMarker(place) {
@@ -120,10 +120,6 @@ app.factory('googleMaps', function($uibModal, modal) {
         var theRating = ratingAverage(place.place_id);
         var publicRestroom = linkData(place.place_id).public;
 
-        console.log(place);
-
-
-        console.log("public" + publicRestroom);
         if (publicRestroom === false) {
           theIcon = 'images/noGo.png';
         } else {

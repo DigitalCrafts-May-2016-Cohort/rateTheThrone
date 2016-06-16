@@ -33,8 +33,11 @@
         <h4 class="modal-title">{{place.name}}</h4>
         <h5 class="modal-title">{{place.vicinity}}</h5>
         <h5 class="modal-title">Throne Rating: {{averageRating}}</h5>
-        <h5 class="modal-title">Public: {{publicOrNot}}</h5>
-        <h5 class="modal-title">Open Now? {{place.opening_hours.open_now}}</h5>
+        <h5 ng-show="{{publicOrNot}}" class="modal-title">Restroom Open to Public</h5>
+        <h5 ng-show="{{!publicOrNot}}" class="modal-title">Restroom Closed to Public</h5>
+
+        <h5 ng-show="{{place.opening_hours.open_now}}"class="modal-title">Open Now</h5>
+                <h5 ng-show="{{!place.opening_hours.open_now}}"class="modal-title">Closed Now</h5>
       </div>
       <div>
         <!--  Review Form -->
@@ -64,14 +67,11 @@
         <table class="table table-striped">
           <tr ng-repeat="singleReview in modalReviewData">
             <td>
-              {{singleReview.author}} rates this throne {{singleReview.rating}} Stars:  <p style="font-style: italic;">{{singleReview.comment}}</p>
+              <strong>{{singleReview.author}}</strong> rates this throne {{singleReview.rating}} Stars:  <p style="font-style: italic;">{{singleReview.comment}}</p>
             </td>
           </tr>
         </table>
       </div>
-      <!-- <div class="modal-footer">
-      <button class="btn btn-warning" type="button" ng-click="cancel()">Close</button>
-    </div> -->
   </script>
 </div>
 
