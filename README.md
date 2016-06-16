@@ -24,9 +24,15 @@ We worked on Rate the Throne mostly using mob programming
 
 ##Project Screenshots
 
-![Rate the Throne](images/rateTheThroneMainPage.png "Rate the Throne Homepage")
 
-![Rate the Throne](images/modalScreenShot.png "Rate the Throne Review Modal")
+Rate the Throne Homepage
+
+![Rate the Throne](images/rateTheThroneMainPage.png)
+
+
+Rate the Throne Review Modal
+
+![Rate the Throne](images/modalScreenShot.png)
 
 
 ##3 contributions your team would like for others to add to the project
