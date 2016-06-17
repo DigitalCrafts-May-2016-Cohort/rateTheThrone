@@ -281,7 +281,7 @@ app.factory('googleMaps', function($uibModal, modal) {
         var easterEggMarker = new google.maps.Marker({
           map: map,
           position: {lat: 33.852746033, lng: -84.3622450},
-          icon: 'images/bathroomsymbolsmall.png'
+          icon: 'images/green.png'
         });
         google.maps.event.addListener(easterEggMarker, "click", function() {
           console.log("you clicked");
