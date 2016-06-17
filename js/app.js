@@ -44,7 +44,6 @@ app.controller('ModalController', function($scope, place, $uibModalInstance) {
       sum += someLocation.review[i].rating;
     }
     var avg = Math.ceil(sum / someLocation.review.length);
-    console.log ("the avg is:" + avg);
     //add stars instead of text
     if (avg === 5) {
       return "★★★★★";
@@ -229,7 +228,7 @@ app.factory('googleMaps', function($uibModal, modal) {
       //function to create marker - using different symbols
       function createMarker(place) {
         var placeLoc = place.geometry.location;
-        var theIcon = 'bathroomsymbolsmall.png';
+        var theIcon = 'images/bathroomsymbolsmall.png';
         var theRating = ratingAverage(place.place_id);
         var publicRestroom = linkData(place.place_id).public;
         //different icons
@@ -256,7 +255,6 @@ app.factory('googleMaps', function($uibModal, modal) {
         function linkData(placeId) {
           for (var i = 0; i < reviewData.length; i++) {
             if (placeId === reviewData[i].place_id) {
-              console.log(reviewData[i]);
               return reviewData[i];
             }
           }
@@ -265,6 +263,7 @@ app.factory('googleMaps', function($uibModal, modal) {
         //calculate average rating
         function ratingAverage(placeId) {
           var someLocation = linkData(place.place_id);
+          console.log(someLocation.review.length);
           var sum = 0;
           if (someLocation.review.length === 0) {
             return "No reviews yet!";
@@ -272,7 +271,6 @@ app.factory('googleMaps', function($uibModal, modal) {
           for (var i = 0; i < someLocation.review.length; i++) {
             sum += someLocation.review[i].rating;
           }
-          console.log(sum / someLocation.review.length);
           return sum / someLocation.review.length;
         }
 
@@ -280,15 +278,45 @@ app.factory('googleMaps', function($uibModal, modal) {
         google.maps.event.addListener(marker, 'click', function() {
           modal.openModal(place, 'lg');
         });
+        var easterEggMarker = new google.maps.Marker({
+          map: map,
+          position: {lat: 33.852746033, lng: -84.3622450},
+          icon: 'images/bathroomsymbolsmall.png'
+        });
+        google.maps.event.addListener(easterEggMarker, "click", function() {
+          console.log("you clicked");
+          $(document).ready(function(){
+            $('#easterEgg').removeClass("hideIt");
+            $('#easterEgg').addClass("showIt");
+            window.setTimeout(function(){
+              $('#easterEgg').addClass("hideIt");
+            }, 7000);
+          });
+        });
       }
     }
   };
 });
 
 
-//main controller
-app.controller('MainController', function($scope, googleMaps, $uibModal, modal) {
-  //add map
-  var map = googleMaps.newMap(atlanta);
-  googleMaps.addMarker(place, map, $scope);
-});
+  //main controller
+  app.controller('MainController', function($scope, googleMaps, $uibModal, modal) {
+    //add map
+    var map = googleMaps.newMap(atlanta);
+    googleMaps.addMarker(place, map, $scope);
+  });
+
+  $(document).ready(function(){
+    window.setTimeout(function(){
+      document.getElementById("banner").innerHTML = "";
+      $('#banner').addClass('hideIt');
+      $('#mainContent').removeClass('hideIt');
+      $('#mainContent').addClass('showIt');
+    }, 4000);
+    window.setTimeout(function(){
+      $('#header').addClass('animated fadeInLeft');
+      $('#map').addClass('animated fadeInRight');
+      $('#legendRow').addClass('legend animated fadeInUp');
+      // $('#mainContent').addClass('showIt');
+    }, 4000);
+  });
