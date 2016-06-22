@@ -1,3 +1,10 @@
+/*
+Suggest changing the format to an object instead of array.
+
+Use place IDs as keys, and the review objects as values for easy look up instead of
+looping through the arrays.
+*/
+
 var reviewData = [
   {
     "name": "BP",

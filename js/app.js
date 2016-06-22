@@ -4,11 +4,21 @@ var map;
 var atlanta = {lat: 33.8486730, lng: -84.3733130};
 var place;
 
+//link google maps data with our data
+function linkData(placeId) {
+  for (var i = 0; i < reviewData.length; i++) {
+    if (placeId === reviewData[i].place_id) {
+      return reviewData[i];
+    }
+  }
+}
+
 //modal controller
 app.controller('ModalController', function($scope, place, $uibModalInstance) {
   $scope.place = place;
-  $scope.location = linkDataModal(place.place_id);
-  $scope.averageRating = ratingAverageModal(linkDataModal(place.place_id));
+  $scope.location = linkData(place.place_id);
+  var average = ratingAverage(place.place_id);
+  $scope.averageRating = getStars(average);
   $scope.modalReviewData = $scope.location.review;
   $scope.publicOrNot = $scope.location.public;
 
@@ -20,45 +30,13 @@ app.controller('ModalController', function($scope, place, $uibModalInstance) {
       "comment": comment
     };
     $scope.modalReviewData.push($scope.newReview);
-    document.reviewForm.reset();
-    document.getElementById('submit-review').style.visibility='hidden';
+    $scope.author = '';
+    $scope.comment = '';
+    $scope.rating = null;
+
+    $scope.submitted = true;
   };
 
-  //function to link data from Google Maps to our data for modal
-  function linkDataModal(placeId) {
-    for (var i = 0; i < reviewData.length; i++) {
-      if (placeId === reviewData[i].place_id) {
-        return reviewData[i];
-      }
-    }
-  }
-
-  //function to find averge rating for modal
-  function ratingAverageModal(placeId) {
-    var someLocation = linkDataModal(place.place_id);
-    var sum = 0;
-    if (someLocation.review.length === 0) {
-      return "No reviews yet!";
-    }
-    for (var i = 0; i < someLocation.review.length; i++) {
-      sum += someLocation.review[i].rating;
-    }
-    var avg = Math.ceil(sum / someLocation.review.length);
-    //add stars instead of text
-    if (avg === 5) {
-      return "★★★★★";
-    } else if (avg === 4) {
-      return "★★★★☆";
-    } else if (avg === 3) {
-      return "★★★☆☆";
-    } else if (avg === 2) {
-      return "★★☆☆☆";
-    } else if (avg === 1) {
-      return "★☆☆☆☆";
-    } else {
-      return "I need a Rating!";
-    }
-  }
 
   //close out of modal
   $scope.cancel = function () {
@@ -85,6 +63,7 @@ app.factory('modal', function($uibModal){
     }
   };
 });
+
 
 
 //google maps service
@@ -229,20 +208,8 @@ app.factory('googleMaps', function($uibModal, modal) {
       function createMarker(place) {
         var placeLoc = place.geometry.location;
         var theIcon = 'images/bathroomsymbolsmall.png';
-        var theRating = ratingAverage(place.place_id);
-        var publicRestroom = linkData(place.place_id).public;
         //different icons
-        if (publicRestroom === false) {
-          theIcon = 'images/noGo.png';
-        } else {
-          if (theRating >= 2 && theRating < 4) {
-            theIcon = 'images/orange.png';
-          } else if (theRating >= 4) {
-            theIcon = 'images/green.png';
-          } else if (theRating < 2) {
-            theIcon = 'images/red.png';
-          }
-        }
+        var theIcon = getIcon(place);
 
         //plot markers
         var marker = new google.maps.Marker({
@@ -250,29 +217,6 @@ app.factory('googleMaps', function($uibModal, modal) {
           position: place.geometry.location,
           icon: theIcon
         });
-
-        //link google maps data with our data
-        function linkData(placeId) {
-          for (var i = 0; i < reviewData.length; i++) {
-            if (placeId === reviewData[i].place_id) {
-              return reviewData[i];
-            }
-          }
-        }
-
-        //calculate average rating
-        function ratingAverage(placeId) {
-          var someLocation = linkData(place.place_id);
-          console.log(someLocation.review.length);
-          var sum = 0;
-          if (someLocation.review.length === 0) {
-            return "No reviews yet!";
-          }
-          for (var i = 0; i < someLocation.review.length; i++) {
-            sum += someLocation.review[i].rating;
-          }
-          return sum / someLocation.review.length;
-        }
 
         //click to open modal
         google.maps.event.addListener(marker, 'click', function() {
@@ -298,6 +242,55 @@ app.factory('googleMaps', function($uibModal, modal) {
   };
 });
 
+function getIcon(place) {
+  var theRating = ratingAverage(place.place_id);
+  var publicRestroom = linkData(place.place_id).public;
+  var theIcon;
+  if (publicRestroom === false) {
+    theIcon = 'images/noGo.png';
+  } else {
+    if (theRating >= 2 && theRating < 4) {
+      theIcon = 'images/orange.png';
+    } else if (theRating >= 4) {
+      theIcon = 'images/green.png';
+    } else if (theRating < 2) {
+      theIcon = 'images/red.png';
+    }
+  }
+  return theIcon;
+}
+
+//calculate average rating
+function ratingAverage(placeId) {
+  var someLocation = linkData(placeId);
+  console.log(someLocation);
+  console.log(someLocation.review.length);
+  var sum = 0;
+  if (someLocation.review.length === 0) {
+    return "No reviews yet!";
+  }
+  for (var i = 0; i < someLocation.review.length; i++) {
+    sum += someLocation.review[i].rating;
+  }
+  return sum / someLocation.review.length;
+}
+
+function getStars(avg) {
+  avg = Math.ceil(avg);
+  if (avg === 5) {
+    return "★★★★★";
+  } else if (avg === 4) {
+    return "★★★★☆";
+  } else if (avg === 3) {
+    return "★★★☆☆";
+  } else if (avg === 2) {
+    return "★★☆☆☆";
+  } else if (avg === 1) {
+    return "★☆☆☆☆";
+  } else {
+    return "I need a Rating!";
+  }
+}
 
   //main controller
   app.controller('MainController', function($scope, googleMaps, $uibModal, modal) {
@@ -306,6 +299,10 @@ app.factory('googleMaps', function($uibModal, modal) {
     googleMaps.addMarker(place, map, $scope);
   });
 
+  /*
+  Try to remove this jQuery, and rewrite in Angular.
+  Use $timeout and ng-class to do equivalent of the jQuery below.
+  */
   $(document).ready(function(){
     window.setTimeout(function(){
       document.getElementById("banner").innerHTML = "";
