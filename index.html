@@ -35,59 +35,6 @@
     <!-- map -->
     <div id="map"></div>
 
-    <div>
-      <!-- modal window -->
-      <script type="text/ng-template" id="myModalContent.html">
-        <div class="modal-header">
-          <button class="btn cancel pull-right" type="button" ng-click="cancel()" >X</button>
-          <h3 class="modal-title">Rate This Throne!</h3>
-          <div class="placeInfo">
-            <h4 class="modal-title underline">{{place.name}}</h4>
-            <h5 class="modal-title">{{place.vicinity}}</h5>
-            <h5 class="modal-title">Throne Rating: {{averageRating}}</h5>
-            <h5 ng-show="{{publicOrNot}}" class="modal-title">Restroom Open to Public</h5>
-            <h5 ng-show="{{!publicOrNot}}" class="modal-title">Restroom Closed to Public</h5>
-
-            <h5 ng-show="{{place.opening_hours.open_now}}"class="modal-title">Open Now</h5>
-            <h5 ng-show="{{!place.opening_hours.open_now}}"class="modal-title">Closed Now</h5>
-          </div>
-        </div>
-        <div>
-          <!-- review form -->
-          <form required ng-submit="addNewReview(author, rating, comment)" name="reviewForm">
-
-            <h4>Submit a Review!</h4>
-
-            <fieldset class="form-group">
-              <select ng-model="rating" class="form-control" ng-options="stars for stars in [5,4,3,2,1]" title="Stars" required>
-                <option value="">Rate the Throne</option>
-              </select>
-            </fieldset>
-            <fieldset class="form-group">
-              <input ng-model="author" type="name" class="form-control" placeholder="John Doo" title="Name" required>
-            </fieldset>
-            <fieldset class="form-group">
-              <textarea ng-model="comment" class="form-control" placeholder="Write a short review of the throne" title="Review" required></textarea>
-            </fieldset>
-            <fieldset id="submit-review" class="form-group">
-              <input type="submit" class="btn btn-primary pull-right" value="Submit Review" />
-            </fieldset>
-          </form>
-        </div>
-        <div class="modal-body">
-          <h6>Reviews</h6>
-          <hr>
-          <table class="table table-striped">
-            <tr ng-repeat="singleReview in modalReviewData">
-              <td>
-                <strong>{{singleReview.author}}</strong> rates this throne {{singleReview.rating}} Stars:  <p style="font-style: italic;">{{singleReview.comment}}</p>
-              </td>
-            </tr>
-          </table>
-        </div>
-      </script>
-    </div>
-
     <!-- legend -->
     <div>
 
